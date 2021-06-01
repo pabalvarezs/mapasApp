@@ -5,16 +5,22 @@
         <label for="" class="form-label">
             Zoom: {{zoomLevel | number:'2.0-2'}} - Lng,Lat : [123,456]
         </label>
-        <input type="range" class="form-range">
+        <input  type="range" 
+                class="form-range"
+                [value]="zoomLevel"
+                min="0"
+                max="18"
+                #zoomInput
+                (input)= "zoomCambio(zoomInput.value)">
     </div>
     <div class="col-12">
         <button class="btn btn-primary"
-                (click)="zoomIn()">
-            +
-        </button>
-        <button class="btn btn-primary float-end"
                 (click)="zoomOut()">
             -
+        </button>
+        <button class="btn btn-primary float-end"
+                (click)="zoomIn()">
+            +
         </button>
     </div>
 </div>
