@@ -4,8 +4,10 @@
         + Agregar
     </li>
     <li class="list-group-item list-group-item-info"
-        (click)="irMarcador()">
-        + Marker 1
+        (click)="irMarcador()"
+        *ngFor="let marcador of marcadores; let i = index"
+        [ngStyle] = "{ 'background-color':marcador.color}">
+        + Marcador {{i+1}}
     </li>
 </ul>
 <div #mapa id="mapaZoom"></div> 
