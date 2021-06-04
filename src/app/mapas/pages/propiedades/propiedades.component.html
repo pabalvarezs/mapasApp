@@ -13,13 +13,14 @@
            <div class="col-4 mb-2"
                 *ngFor="let propiedad of propiedades">
                <div class="card">
-                    <img src="https://i.pinimg.com/originals/dc/ab/b7/dcabb7fbb2f763d680d20a3d228cc6f9.jpg" class="card-img-top" alt="">
+                   <app-mini-mapa [lngLat]="propiedad.lngLat" class="card-img-top"></app-mini-mapa>
+                    <!-- <img src="https://i.pinimg.com/originals/dc/ab/b7/dcabb7fbb2f763d680d20a3d228cc6f9.jpg" class="card-img-top" alt=""> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{propiedad.titulo}}</h5>
+                        <p class="card-text">{{propiedad.descripcion}}</p>
+                    </div>
                </div>
-               <div class="card-body">
-                    <h5 class="card-title">{{propiedad.titulo}}</h5>
-                    <p class="card-text">{{propiedad.descripcion}}</p>
-               </div>
-           </div>
+            </div>
        </div> 
     </div>
 </div>
